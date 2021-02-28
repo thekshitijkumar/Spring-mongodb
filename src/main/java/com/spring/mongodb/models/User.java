@@ -12,6 +12,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class User {
     private String name;
     private int age;
-    private int bmi;
+    private double bmi;
     private Address address;
 }

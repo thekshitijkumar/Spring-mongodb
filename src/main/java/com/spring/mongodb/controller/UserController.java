@@ -3,10 +3,7 @@ package com.spring.mongodb.controller;
 import com.spring.mongodb.models.User;
 import com.spring.mongodb.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,10 +18,20 @@ public class UserController {
     {
         return userRepository.findAll();
     }
-    @GetMapping("/user/{id}")
+    @GetMapping("/user/{name}")
     public List<User> getUser(@PathVariable("name")String name)
     {
         return userRepository.findByName(name);
+    }
+    @GetMapping("/userByAge")
+    public List<User> getUserForAge(@RequestParam("age") int age)
+    {
+        return userRepository.findUserByAge(age);
+    }
+    @PostMapping("/user")
+    public void insertUser(@RequestBody User user)
+    {
+        userRepository.save(user);
     }
 
 }
