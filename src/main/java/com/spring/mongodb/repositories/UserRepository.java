@@ -13,4 +13,7 @@ public interface UserRepository extends MongoRepository<User,String> {
     //custom query only similar to native can exist
     @Query("{age:{$gte: ?0}}")
     public List<User> findUserByAge(int age);
+
+    @Query("{name: ?0}")
+    public List<User> findUserByFirstName(String name);
 }
