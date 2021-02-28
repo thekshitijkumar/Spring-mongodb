@@ -9,7 +9,7 @@ In RDBMS database->table->row->column
 - use <user_specified_name_of_db>
 - show collections
 - db.createCollection("<custome_name">)
-  - db.createCollection"test")
+  - db.createCollection("test")
     
 - db.test.insert({"name":"Kshitij","city":"Ambala","title":"Software Developer"})
 - db.test.find().pretty()
